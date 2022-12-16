@@ -1,0 +1,12 @@
+.effect img.image{
+/*type your css here which you want to use for both*/
+}
+.effect:hover img.image{
+display:none;
+}
+.effect img.hover{
+display:none;
+}
+.effect:hover img.hover{
+display:block;
+}

@@ -1,0 +1,64 @@
+package dataScrapper;
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import dataObject.*;
+
+
+//public class mainScrapper { //UNCOMMENTTT
+	
+	static private Connection con;
+	
+	public static void main (String args[]) {
+		
+		//getting current date 
+		LocalDate dateObj = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String date = dateObj.format(formatter);
+		
+		DataObject data = Scrapper.getData();
+		
+		try {
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projdb?autoReconnect=true&useSSL=false&serverTimezone=US/Eastern","root","theoneandonly");
+			PreparedStatement ps = con.prepareStatement("INSERT INTO data_source VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
+			int index = 1;
+			ps.setString(1, date); //set first value PRIMARY KEY = current date
+			for (int i =0; i<5; i++) { 
+				for(int j =0; j< 3; j++) {
+					
+					// i to access every country in the data object
+					// j to access every field value for each country
+					String value = data.table1[i][j];
+					index++;
+					System.out.println(value);
+					ps.setString(index, value);
+				}	
+			}
+			
+			System.out.println(ps.toString());
+			ps.execute();
+			///int rs = stmt.executeUpdate(ps);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+}
+
+
+
+
+

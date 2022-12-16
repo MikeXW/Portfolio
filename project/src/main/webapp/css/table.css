@@ -1,0 +1,30 @@
+@charset "UTF-8";
+body{
+    padding-top: 300px;
+}
+
+.container{
+   	    border-radius: 15px;
+    	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    	background-color: #f1f1f1;
+    	height: 300px;
+    	width: 800px;
+    	margin: auto;
+    	text-align: center;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }

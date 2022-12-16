@@ -1,0 +1,41 @@
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+body{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.card{
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    background-color: #f1f1f1;
+    height: 350px;
+    width: 340px;
+    text-align: center;
+    margin: 20px;
+    padding-top: 40px;
+}
+.row{
+    display:flex;
+}
+.columns
+{display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+flex-direction: row;
+align-items: flex-start;}
+
+button{
+    color: rgb(0, 0, 0);
+    background-color: rgb(165, 163, 148);
+    border-radius: 15px;
+    width: 50%;
+    height: 30px;
+    
+    border-style: none;
+}

@@ -1,0 +1,75 @@
+package dataScrapper;
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import dataObject.*;
+
+
+public class mainScrapper {
+	
+	static private Connection con;
+	
+	public static void main (String args[]) {
+		
+
+
+		try {
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projdb?autoReconnect=true&useSSL=false&serverTimezone=US/Eastern","root","theoneandonly");
+			
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT LAST(Date) AS date FROM data_source");
+			
+			//PreparedStatement ps = con.prepareStatement("Select * from data_source");
+			
+			
+			//ResultSet rs = ps.executeQuery();
+			
+			Table table = new Table();
+			
+			while(rs.next()) {
+				
+				int index = 1;
+				String value = rs.getString(index);
+				
+				while(value != null) {
+					table.addValueRow(value);
+					index++;
+					try {value = rs.getString(index);
+					}catch(Exception e) {break;}
+				}
+				table.insertRow();	
+				
+				//System.out.println(rs.getString(0));
+		
+			}
+			table.print();
+
+			
+			
+			
+
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+}
+
+
+
+
+

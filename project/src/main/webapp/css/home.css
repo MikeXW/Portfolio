@@ -1,0 +1,72 @@
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #12555e;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 25px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    text-align: center;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #e3e0cc;
+    color: #3b3a30;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #1c2d39;
+    color: white;
+  }
+ 
+ 	.fa_fa-user-secret_ul_{
+ 	position: absolute;
+ 	top: 4rem;
+ 	left: 1rem;
+ 	box-shadow: 0 0 10px red;
+ 	border-radius: .1px;
+ 	width: 14rem;
+ 	padding: 1rem;
+ 	display: flex;
+ 	flex-direction: column;
+ 	gap:0.5rem;
+ 	opacity:0;
+ 	visibility: hidden;
+ 	translation: opacity 200ms ease-in-out;
+ 	}
+ 
+  body{
+    background-color: #a5a4a4;
+  }
+
+  header{
+    text-align: center;
+  }
+
+  #school{
+    font-family:roboto slab;
+    color: #fdffff;
+  }
+
+  #department{
+    font-family:roboto slab;
+    color: #fdffff;
+  }
+
+  #class{
+    font-family:roboto slab;
+    color: #fdffff;
+  }
+  #map{
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+  }

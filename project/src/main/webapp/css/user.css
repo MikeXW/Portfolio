@@ -1,0 +1,62 @@
+@charset "UTF-8";
+body {font-family: Arial, Helvetica, sans-serif;}
+ 
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+ 
+/* Set a style for all buttons */
+button {
+  background-color: #5189ae;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 50%;
+}
+ 
+button:hover {
+  opacity: 0.8;
+}
+ 
+.container{
+     border-radius: 15px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+      background-color: #f1f1f1;
+      height: 580px;
+      width: 480px;
+      margin: auto;
+      text-align: center;
+      padding-top: 30px;
+}
+ 
+body {
+      padding-top: 90px;
+}
+.usernameInput{
+  margin: auto;
+  text-align: center;
+  width: 70%;
+}
+.passwordInput{
+  margin: auto;
+  text-align: center;
+  width: 70%;
+}
+ 
+.secInput{
+  margin: auto;
+  text-align: center;
+  width: 70%;
+}
+ 
+input{
+  border-radius: 15px;
+}
